@@ -20,7 +20,7 @@ main .localisation {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(202, 199, 199, 0.925);
+    background-color: #a29f9f45;
     padding: 2px;
     gap: 10px;
 }
@@ -89,4 +89,87 @@ ol .fas {
     justify-content: center;
     align-items: center;
     left: -15px;
+}
+.restaurantMenu {
+    background-color: #a29f9f45;
+    height: auto;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+}
+.cardMenu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    width: 40%;
+    height: 170px;
+    background-color: white;
+    padding: 0.7%;
+    border-radius: 14px;
+    margin: 20px;
+    position: relative;
+}
+.new::before {
+    content: "Nouveau";
+    position: absolute;
+    height: 25px;
+    width: 80px;
+    background-color: #99E2D0;
+    text-align: center;
+    color: rgb(149, 182, 149);
+    padding-top: 4px;
+    right: 15px;
+    top: 15px;
+}
+.imgCard {
+    object-fit: cover;
+    width: 100%;
+    height: 110px;
+    border-radius: 14px 14px 0 0;
+}
+.detailCard {
+    position: relative;
+    height: auto;
+}
+.detailCard p { 
+    margin: 0 0 3px 5px;
+    color: black;
+    font-size: 13px;
+}
+.detailCard i {
+    position: absolute;
+    right: 16px;
+    top: 30%;
+    font-size: 20px;
+}
+h4 {
+    margin: 5px 0 3px 5px;
+    color: black;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}
+@media screen and (max-width: 450px) {
+    .card {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+}
+footer {
+    background-color: rgba(34, 30, 30, 0.87);
+    color: white;
+    padding: 15px;
+}
+footer a {
+    color: white;
+}
+footer h3 {
+    font-family: shriken;
+    font-weight: bold;
+}
+footer i {
+    padding: 5px;
 }
