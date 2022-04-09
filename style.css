@@ -144,6 +144,19 @@ ol .fas {
     top: 30%;
     font-size: 20px;
 }
+.detailCard .fas {
+    color: transparent;
+    background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+    background-clip: text;
+    -webkit-background-clip: text;
+    transition: transform 200ms;
+    opacity: 0;
+}
+.detailCard:hover .fas {
+    transform: scale(1.08);
+    opacity: 1;
+    border: none;
+}
 h4 {
     margin: 5px 0 3px 5px;
     color: black;
