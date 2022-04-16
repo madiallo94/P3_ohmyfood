@@ -1,0 +1,25 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "projet 3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madiallo94/P3_ohmyfood.git"
+  },
+  "author": "madiallo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/madiallo94/P3_ohmyfood/issues"
+  },
+  "homepage": "https://github.com/madiallo94/P3_ohmyfood#readme",
+  "dependencies": {
+    "npm": "^8.7.0"
+  },
+  "devDependencies": {
+    "sass": "^1.50.0"
+  }
+}
