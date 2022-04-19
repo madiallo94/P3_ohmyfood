@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;1,100&family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,300;1,100&family=Roboto:wght@300;400;500&family=Shrikhand&display=swap');
 *, ::before, ::after{
     box-sizing: border-box;
 }
@@ -63,7 +63,7 @@ main .localisation {
 }
 .fonction ol {
     display: flex;
-    flex-wrap: wrap;
+    
     gap: 30px;
     list-style-type: none; 
     counter-reset: number; /* compteur */
@@ -81,12 +81,15 @@ main .localisation {
     box-shadow: 1.5px 0.5px 7.5px -5px;
     transition: transform 200ms;
 }
-.fonction li:hover {
+ol li:hover {
     transform: scale(1.02);
     opacity: 0.9;
+    i::before {
+       color: #b52fda;
+    }
 }
 ol .fas {
-    margin-right: 10px;
+    margin: 0 15px;
 }
 
 .fonction li::before {
@@ -96,9 +99,9 @@ ol .fas {
     padding: 10px;
     position: absolute;
     border-radius: 50%;
-    background-color: #9356DC;
-    width: 16px;
-    height: 16px;
+    background-color: #b52fda;
+    width: 18px;
+    height: 18px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,7 +157,7 @@ ol .fas {
 }
 .detailCard i {
     position: absolute;
-    right: 16px;
+    right: 18px;
     top: 30%;
     font-size: 20px;
 }
