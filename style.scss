@@ -9,23 +9,26 @@ html, body {
 header {
     position: relative;
     text-align: center;
-    box-shadow: 0 0 0.5px 0.5px;
+    box-shadow: 0 0 5px -3px;
     margin: 0;
     padding: 8px;
 }
 header img {
+
     height: 25px;
 }
 main .localisation {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #a29f9f45;
-    padding: 2px;
+    background-color: #e6e6e6;
+    padding: 10px;
     gap: 10px;
 }
 .explor_menu {
     text-align: center;
+    background-color: #f6f6f6;
+    padding-top: 1px;
 }
 .explor_menu h3 {
     margin-bottom: 5px;
@@ -40,6 +43,7 @@ main .localisation {
     font-weight: 400;
     font-size: 15px;
     padding: 10px 12px;
+    margin: 10px 0 30px 0;
     background-image: linear-gradient(to top, #9356DC, #FF79DA);
     border-radius: 18px;
     border: none;
@@ -50,31 +54,41 @@ main .localisation {
     transform: scale(1.02);
     opacity: 0.9;
 }
+.fonction {
+    position: relative;
+    padding-bottom: 20px;
+}
 .fonction h3 {
     padding-left: 20px;
 }
 .fonction ol {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     list-style-type: none; 
     counter-reset: number; /* compteur */
 }
 .fonction li {
+    display: flex;
+    align-items: center;
     position: relative;
     background-color: #f6f6f6;
     padding: 8px 12px;
     font-size: small;
-    width: auto;
+    height: 50px;
+    width: 30%;
     border-radius: 12px;
     box-shadow: 1.5px 0.5px 7.5px -5px;
+    transition: transform 200ms;
+}
+.fonction li:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
 }
 ol .fas {
     margin-right: 10px;
 }
-.unique {
-    color: #9356DC;
-}
+
 .fonction li::before {
     counter-increment: number;
     content: counter(number);
@@ -91,9 +105,9 @@ ol .fas {
     left: -15px;
 }
 .restaurantMenu {
-    background-color: #a29f9f45;
+    background-color: #f6f6f6;
     height: auto;
-    padding: 20px;
+    padding: 20px 10px 50px 10px;
     margin-top: 20px;
     position: relative;
 }
@@ -103,8 +117,8 @@ ol .fas {
     justify-content: center;
 }
 .card {
-    width: 40%;
-    height: 170px;
+    width: 44%;
+    height: 210px;
     background-color: white;
     padding: 0.7%;
     border-radius: 14px;
@@ -126,7 +140,7 @@ ol .fas {
 .imgCard {
     object-fit: cover;
     width: 100%;
-    height: 110px;
+    height: 150px;
     border-radius: 14px 14px 0 0;
 }
 .detailCard {
@@ -165,10 +179,17 @@ h4 {
 a {
     text-decoration: none;
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
     .card {
         width: 100%;
         margin: 0 0 15px 0;
+    }
+    .fonction ol {
+        flex-direction: column;
+ 
+    }
+    .fonction li {
+        width: 96%;
     }
 }
 footer {
