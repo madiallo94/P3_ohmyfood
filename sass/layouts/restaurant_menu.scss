@@ -4,72 +4,94 @@
     padding: 20px 10px 50px 10px;
     margin-top: 20px;
     position: relative;
-}
-.cardMenu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.card {
-    width: 44%;
-    height: 210px;
-    background-color: white;
-    padding: 0.7%;
-    border-radius: 14px;
-    margin: 20px;
-    position: relative;
-}
-.new::before {
-    content: "Nouveau";
-    position: absolute;
-    height: 25px;
-    width: 80px;
-    background-color: #99E2D0;
-    text-align: center;
-    color: rgb(149, 182, 149);
-    padding-top: 4px;
-    right: 15px;
-    top: 15px;
-}
-.imgCard {
-    object-fit: cover;
-    width: 100%;
-    height: 150px;
-    border-radius: 14px 14px 0 0;
-}
-.detailCard {
-    position: relative;
-    height: auto;
-}
-.detailCard p { 
-    margin: 0 0 3px 5px;
-    color: black;
-    font-size: 13px;
-}
-.detailCard i {
-    position: absolute;
-    right: 18px;
-    top: 30%;
-    font-size: 20px;
-}
-.detailCard .fas {
-    color: transparent;
-    background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-    background-clip: text;
-    -webkit-background-clip: text;
-    transition: transform 200ms;
-    opacity: 0;
-}
-.detailCard:hover .fas {
-    transform: scale(1.08);
-    opacity: 1;
-    border: none;
-}
-h4 {
-    margin: 5px 0 3px 5px;
-    color: black;
-    font-weight: bold;
-}
-a {
-    text-decoration: none;
+
+    .cardMenu {
+        display: flex;
+        justify-content: center;
+    }
+    @media screen and (max-width: 1100px) {
+        .cardMenu {
+            flex-wrap: wrap;
+        }
+    }
+    .card {
+        width: 44%;
+        height: 210px;
+        background-color: white;
+        padding: 0.7%;
+        border-radius: 14px;
+        margin: 20px;
+        position: relative;
+        @for $i from 1 through 4 {
+            .img_card-#{$i} {
+                background-image: url(../../images/restaurants/restaurant_#{$i}.jpg);
+                
+            }
+        }
+        .img_card {
+            background-color: #99E2D0;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 150px;
+            border-radius: 14px 14px 0 0;
+        }   
+            
+        
+    }
+    @media screen and (max-width: 768px) {
+        .card {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+    .new::before {
+        content: "Nouveau";
+        position: absolute;
+        height: 25px;
+        width: 80px;
+        background-color: #99E2D0;
+        text-align: center;
+        color: rgb(149, 182, 149);
+        padding-top: 4px;
+        right: 15px;
+        top: 15px;
+    }
+    
+    .detailCard {
+        position: relative;
+        height: auto;
+    }
+    .detailCard p { 
+        margin: 0 0 3px 5px;
+        color: black;
+        font-size: 13px;
+    }
+    .detailCard i {
+        position: absolute;
+        right: 18px;
+        top: 30%;
+        font-size: 20px;
+    }
+    .detailCard .fas {
+        color: transparent;
+        background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+        background-clip: text;
+        -webkit-background-clip: text;
+        transition: transform 200ms;
+        opacity: 0;
+    }
+    .detailCard:hover .fas {
+        transform: scale(1.08);
+        opacity: 1;
+        border: none;
+    }
+    h4 {
+        margin: 5px 0 3px 5px;
+        color: black;
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
 }

@@ -1,18 +1,19 @@
 footer {
     background-color: rgba(34, 30, 30, 0.87);
     color: white;
-    padding: 15px;
-}
-footer a {
-    color: white;
-}
-footer p {
-    margin: 8px;
-}
-footer h3 {
-    font-family: Shrikhand;
-    font-weight: bold;
-}
-footer i {
-    padding: 5px;
+    padding: 10px 20px;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    p {
+        margin: 8px 0;
+    }
+    h3 {
+        font-family: Shrikhand;
+        font-weight: bold;
+    }
+    i {
+        padding: 5px;
+    }
 }

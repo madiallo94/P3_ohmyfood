@@ -1,0 +1,74 @@
+.logo_restautants img {
+    height: 26px;
+}
+.imag_resto img {
+    width: 100%;
+    height: 35vh;
+    object-fit: cover;
+    object-position: center top;
+}
+.titre_menu {
+    position: relative;
+    margin-top: -60px;
+    border-radius: 22px 22px 0 0;
+    background-color: #f6f6f6;
+}
+.titre_menu h2{
+    font-family: "shrikhand", "cursive";
+    font-size: 18px;
+    padding: 18px;
+    margin-top: 0;
+}
+.menus_grid {
+}
+
+.menus_compo {
+    display: flex;
+    
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 0 6px -3px;
+}
+.menus_compo_items {
+    /* Pour mettre les petit points
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    */
+    padding: 10px;
+}
+.menus_compo_items p {
+    margin: 0;
+    font-size: 12px;
+}
+.menu_compo_prix {
+    margin-left: auto;
+    font-weight: 900;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+}
+.menus_compo_check {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    background-color: #99E2D0;
+    margin-right: -20px;
+    transition: margin-right 0.5s;
+}
+.menus_compo_check i {
+    display: grid;
+    place-items: center;
+    background-color: white;
+
+}
+.menus_compo_check i:hover {
+  /*  @include zoum.transform_zoum;*/
+    animation: transform_zoum 0.5s ease-in-out;
+}
+/*
+.menus_grid h3 {
+    padding: 0 10px;
+    margin: 10px;
+}4rem
+*/
