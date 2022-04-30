@@ -12,18 +12,45 @@
        margin-top: 0;
    }
     button {
-       color: white;
-       font-weight: 400;
-       font-size: 15px;
-       padding: 10px 12px;
-       margin: 10px 0 30px 0;
-       background-image: linear-gradient(to top, #9356DC, #FF79DA);
-       border-radius: 18px;
-       border: none;
-       transition: transform 200ms;
-       box-shadow: 2px 1px 15px -3px;
+      @include mixins.button_commander;
        &:hover {
            @include mixins.transform_zoum;
        }
+    }
+}
+.loader {
+    position: fixed;
+    display: grid;
+    place-items: center;
+    z-index: 1;
+    height: 100%;
+    inset: 0;
+    background-color: #f7f1f1fb;
+    opacity: 0.9;
+    animation: background_anination 200ms;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+    transform-origin: top;
+    &::after {
+        content: "";
+        width: 100px;
+        height: 100px;
+        border-top: 3px transparent #9356DC;
+        border-right: 3px solid #FF79DA;
+        border-radius: 50%;
+        animation: spin 1.5s infinite linear;
+    }
+}
+@keyframes background_anination {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+    }
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

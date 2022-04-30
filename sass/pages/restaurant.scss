@@ -1,8 +1,16 @@
-
 @use "../utils/mixins.scss";
-
+@use "../utils/animation.scss";
 body{
     background-color: #f6f6f6;
+}
+#resto_1 header, #resto_2 header, #resto_3 header, #resto_4 header {
+    position: relative;
+    &::before {
+        content: "\f060";
+        @include mixins.font_awesome_soeudo_element;
+        font-weight: 900;
+        left: 1rem;
+    }
 }
 .logo_restautants img {
     height: 26px;
@@ -34,7 +42,7 @@ body{
     padding: 10px;
     gap: 10px;
     width: 100%;
-    .menu_entree {
+    .menus {
         overflow: hidden;
         background-color: #f6f6f6;
         h3 {
@@ -52,17 +60,37 @@ body{
                 left: 0;
             }
         }
-        .menus_compo {
-            display: flex;
-            margin: 16px 2px;
-            box-shadow: 1px 1px 8px -3px;
-            border-radius: 14px;
-            width: auto;
-            overflow: hidden;
+        .menus_items_list {
+            $menu_item_list: 3;
+            @for $i from 1 through $menu_item_list {
+                &:nth-child(#{$i}) {
+                    animation-delay: 100ms * $i;
+                }
+            }
+            .menus_compo {
+                display: flex;
+                background-color: white;
+                margin: 16px 2px;
+                box-shadow: 1px 1px 8px -3px;
+                border-radius: 14px;
+                width: auto;
+                overflow: hidden;
+                animation: animation_menus 1s;
+                animation-fill-mode: both;
+                &:hover {
+                    .menus_compo_check {
+                        margin-right: 0;
+                        i::before {
+                            @include mixins.animation_spin;
+                            animation: animation_spin 0.5s ease-in-out;
+                        }
+                    }
+                    cursor: pointer;
+                }
+            }
             .menus_compo_items {
                 overflow: hidden;
                 padding: 10px;
-                background-color: white;
                 h4, p {
                     margin: 2px 0;
                     overflow: hidden;
@@ -106,19 +134,21 @@ body{
                     }
                 }
             }
-            &:hover {
-                .menus_compo_check {
-                    margin-right: 0;
-                    i::before {
-                        @include mixins.animation_spin;
-                        animation: animation_spin 0.5s ease-in-out;
-                    }
-                }
-                cursor: pointer;
-            }
         }
         
     }
+}
+section.commander {
+    height: 10vh;
+    display: grid;
+    place-items: center;
+    button {
+        @include mixins.button_commander;
+        &:hover {
+            @include mixins.transform_zoum;
+        }
+    }    
+}
     /* 
     @include zoum.transform_zoum;
     animation: transform_zoum 0.5s ease-in-out;
@@ -147,4 +177,3 @@ body{
         margin: 10px;
     }4rem
     */
-}

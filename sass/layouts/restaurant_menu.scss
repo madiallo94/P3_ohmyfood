@@ -1,3 +1,4 @@
+@use "../utils/mixins.scss";
 .restaurantMenu {
     background-color: #e6e6e6;
     height: auto;
@@ -54,31 +55,42 @@
     .detailCard {
         position: relative;
         height: auto;
+        /*
+        &::before {
+            @include mixins.heart;
+        }
+        &::after {
+            @include mixins.heart;
+            color: transparent;
+            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+        }
+        */
+        p { 
+            margin: 0 0 3px 5px;
+            color: black;
+            font-size: 13px;
+        }
+        i {
+            position: absolute;
+            right: 18px;
+            top: 30%;
+            font-size: 20px;
+        }
+        .fas {
+            color: transparent;
+            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+            background-clip: text;
+            -webkit-background-clip: text;
+            transition: transform 200ms;
+            opacity: 0;
+        }
+        &:hover .fas {
+            transform: scale(1.08);
+            opacity: 1;
+            border: none;
+        }
     }
-    .detailCard p { 
-        margin: 0 0 3px 5px;
-        color: black;
-        font-size: 13px;
-    }
-    .detailCard i {
-        position: absolute;
-        right: 18px;
-        top: 30%;
-        font-size: 20px;
-    }
-    .detailCard .fas {
-        color: transparent;
-        background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-        background-clip: text;
-        -webkit-background-clip: text;
-        transition: transform 200ms;
-        opacity: 0;
-    }
-    .detailCard:hover .fas {
-        transform: scale(1.08);
-        opacity: 1;
-        border: none;
-    }
+    
     h4 {
         margin: 5px 0 3px 5px;
         color: black;

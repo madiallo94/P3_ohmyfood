@@ -56,12 +56,50 @@ main .localisation {
   border: none;
   transition: transform 200ms;
   box-shadow: 2px 1px 15px -3px;
+  cursor: pointer;
 }
 .explor_menu button:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
 
+.loader {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  height: 100%;
+  inset: 0;
+  background-color: rgba(247, 241, 241, 0.9843137255);
+  opacity: 0.9;
+  animation: background_anination 200ms;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  transform-origin: top;
+}
+.loader::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-top: 3px transparent #9356DC;
+  border-right: 3px solid #FF79DA;
+  border-radius: 50%;
+  animation: spin 1.5s infinite linear;
+}
+
+@keyframes background_anination {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 .fonction {
   margin: 20px 0 20px 0;
 }
@@ -170,6 +208,16 @@ main .localisation {
 .restaurantMenu .detailCard {
   position: relative;
   height: auto;
+  /*
+  &::before {
+      @include mixins.heart;
+  }
+  &::after {
+      @include mixins.heart;
+      color: transparent;
+      background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+  }
+  */
 }
 .restaurantMenu .detailCard p {
   margin: 0 0 3px 5px;
@@ -224,8 +272,35 @@ footer i {
   padding: 5px;
 }
 
+@keyframes animation_menus {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 body {
   background-color: #f6f6f6;
+}
+
+#resto_1 header, #resto_2 header, #resto_3 header, #resto_4 header {
+  position: relative;
+}
+#resto_1 header::before, #resto_2 header::before, #resto_3 header::before, #resto_4 header::before {
+  content: "\f060";
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  position: absolute;
+  cursor: pointer;
+  font-weight: 900;
+  left: 1rem;
 }
 
 .logo_restautants img {
@@ -258,46 +333,18 @@ body {
   padding: 10px;
   gap: 10px;
   width: 100%;
-  /* 
-  @include zoum.transform_zoum;
-  animation: transform_zoum 0.5s ease-in-out;
-  .menus_compo_items {
-     Pour mettre les petit points
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      padding: 10px;
-
-  }
-  .menus_compo_items p {
-      margin: 0;
-      font-size: 12px;
-  }
-   */
-  /*
-  .menus_compo_check i:hover {
-    @include zoum.transform_zoum;
-      animation: transform_zoum 0.5s ease-in-out;
-  }
-  */
-  /*
-  .menus_grid h3 {
-      padding: 0 10px;
-      margin: 10px;
-  }4rem
-  */
 }
-.menus_grid .menu_entree {
+.menus_grid .menus {
   overflow: hidden;
   background-color: #f6f6f6;
 }
-.menus_grid .menu_entree h3 {
+.menus_grid .menus h3 {
   margin-top: 0;
   text-transform: uppercase;
   font-weight: 400;
   position: relative;
 }
-.menus_grid .menu_entree h3::after {
+.menus_grid .menus h3::after {
   content: "";
   height: 2px;
   width: 46px;
@@ -306,68 +353,33 @@ body {
   top: 22px;
   left: 0;
 }
-.menus_grid .menu_entree .menus_compo {
+.menus_grid .menus .menus_items_list:nth-child(1) {
+  animation-delay: 100ms;
+}
+.menus_grid .menus .menus_items_list:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menus_grid .menus .menus_items_list:nth-child(3) {
+  animation-delay: 300ms;
+}
+.menus_grid .menus .menus_items_list .menus_compo {
   display: flex;
+  background-color: white;
   margin: 16px 2px;
   box-shadow: 1px 1px 8px -3px;
   border-radius: 14px;
   width: auto;
   overflow: hidden;
+  animation: animation_menus 1s;
+  animation-fill-mode: both;
 }
-.menus_grid .menu_entree .menus_compo .menus_compo_items {
-  overflow: hidden;
-  padding: 10px;
-  background-color: white;
-}
-.menus_grid .menu_entree .menus_compo .menus_compo_items h4, .menus_grid .menu_entree .menus_compo .menus_compo_items p {
-  margin: 2px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.menus_grid .menu_entree .menus_compo .menus_compo_items p {
-  font-size: 12px;
-}
-.menus_grid .menu_entree .menus_compo .menu_compo_prix {
-  margin-left: auto;
-  font-weight: 900;
-  font-size: 12px;
-  display: flex;
-  align-items: flex-end;
-  padding: 10px;
-}
-.menus_grid .menu_entree .menus_compo .menus_compo_check {
-  display: grid;
-  flex-shrink: 0;
-  width: 45px;
-  height: auto;
-  margin-right: -45px;
-  transition: margin-right 0.5s;
-  border-radius: 0 14px 14px 0;
-  background-color: #99E2D0;
-  transition: margin-right 0.5s;
-}
-.menus_grid .menu_entree .menus_compo .menus_compo_check i {
-  display: grid;
-}
-.menus_grid .menu_entree .menus_compo .menus_compo_check i::before {
-  color: #99E2D0;
-  background-color: white;
-  border-radius: 50%;
-  width: 22px;
-  height: 22px;
-  margin: auto;
-  display: grid;
-  align-items: center;
-  place-items: center;
-}
-.menus_grid .menu_entree .menus_compo:hover {
+.menus_grid .menus .menus_items_list .menus_compo:hover {
   cursor: pointer;
 }
-.menus_grid .menu_entree .menus_compo:hover .menus_compo_check {
+.menus_grid .menus .menus_items_list .menus_compo:hover .menus_compo_check {
   margin-right: 0;
 }
-.menus_grid .menu_entree .menus_compo:hover .menus_compo_check i::before {
+.menus_grid .menus .menus_items_list .menus_compo:hover .menus_compo_check i::before {
   animation: animation_spin 0.5s ease-in-out;
 }
 @keyframes animation_spin {
@@ -378,7 +390,104 @@ body {
     transform: rotate(0);
   }
 }
+.menus_grid .menus .menus_items_list .menus_compo_items {
+  overflow: hidden;
+  padding: 10px;
+}
+.menus_grid .menus .menus_items_list .menus_compo_items h4, .menus_grid .menus .menus_items_list .menus_compo_items p {
+  margin: 2px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menus_grid .menus .menus_items_list .menus_compo_items p {
+  font-size: 12px;
+}
+.menus_grid .menus .menus_items_list .menu_compo_prix {
+  margin-left: auto;
+  font-weight: 900;
+  font-size: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+.menus_grid .menus .menus_items_list .menus_compo_check {
+  display: grid;
+  flex-shrink: 0;
+  width: 45px;
+  height: auto;
+  margin-right: -45px;
+  transition: margin-right 0.5s;
+  border-radius: 0 14px 14px 0;
+  background-color: #99E2D0;
+  transition: margin-right 0.5s;
+}
+.menus_grid .menus .menus_items_list .menus_compo_check i {
+  display: grid;
+}
+.menus_grid .menus .menus_items_list .menus_compo_check i::before {
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  display: grid;
+  align-items: center;
+  place-items: center;
+}
 
+section.commander {
+  height: 10vh;
+  display: grid;
+  place-items: center;
+}
+section.commander button {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  padding: 10px 12px;
+  margin: 10px 0 30px 0;
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
+  border-radius: 18px;
+  border: none;
+  transition: transform 200ms;
+  box-shadow: 2px 1px 15px -3px;
+  cursor: pointer;
+}
+section.commander button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/* 
+@include zoum.transform_zoum;
+animation: transform_zoum 0.5s ease-in-out;
+.menus_compo_items {
+   Pour mettre les petit points
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px;
+
+}
+.menus_compo_items p {
+    margin: 0;
+    font-size: 12px;
+}
+ */
+/*
+.menus_compo_check i:hover {
+  @include zoum.transform_zoum;
+    animation: transform_zoum 0.5s ease-in-out;
+}
+*/
+/*
+.menus_grid h3 {
+    padding: 0 10px;
+    margin: 10px;
+}4rem
+*/
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
