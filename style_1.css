@@ -60,16 +60,6 @@ main .localisation {
 .explor_menu button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  /*
-  @keyframes transform_zoum{
-      0% {
-          transform: rotate(-270deg);
-      }
-      100% {
-          transform: rotate(0);
-      }
-  }
-  */
 }
 
 .fonction {
@@ -122,16 +112,6 @@ main .localisation {
 .fonction li:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  /*
-  @keyframes transform_zoum{
-      0% {
-          transform: rotate(-270deg);
-      }
-      100% {
-          transform: rotate(0);
-      }
-  }
-  */
   background-color: #dbd7d7;
 }
 .fonction li:hover i::before {
@@ -163,22 +143,8 @@ main .localisation {
   margin: 20px;
   position: relative;
 }
-.restaurantMenu .card .img_card-1 {
-  background-image: url(../../images/restaurants/restaurant_1.jpg);
-}
-.restaurantMenu .card .img_card-2 {
-  background-image: url(../../images/restaurants/restaurant_2.jpg);
-}
-.restaurantMenu .card .img_card-3 {
-  background-image: url(../../images/restaurants/restaurant_3.jpg);
-}
-.restaurantMenu .card .img_card-4 {
-  background-image: url(../../images/restaurants/restaurant_4.jpg);
-}
-.restaurantMenu .card .img_card {
-  background-color: #99E2D0;
-  background-size: cover;
-  background-position: center;
+.restaurantMenu .card_image {
+  object-fit: cover;
   width: 100%;
   height: 150px;
   border-radius: 14px 14px 0 0;
@@ -258,10 +224,141 @@ footer i {
   padding: 5px;
 }
 
-/*
-@use "./sass/pages/restaurant.scss";
-@use "./sass/pages/restaurant.scss";
-*/
+body {
+  background-color: #f6f6f6;
+}
+
+.logo_restautants img {
+  height: 26px;
+}
+
+.imag_resto img {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.titre_menu {
+  margin-top: -25px;
+}
+.titre_menu h2 {
+  font-family: "shrikhand", "cursive";
+  font-size: 18px;
+  padding: 18px;
+  margin: -4px 0 0 0;
+  background-color: #f6f6f6;
+  border-radius: 22px 22px 0 0;
+  position: relative;
+}
+
+.menus_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 10px;
+  gap: 10px;
+  width: 100%;
+  /* 
+  @include zoum.transform_zoum;
+  animation: transform_zoum 0.5s ease-in-out;
+  .menus_compo_items {
+     Pour mettre les petit points
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      padding: 10px;
+
+  }
+  .menus_compo_items p {
+      margin: 0;
+      font-size: 12px;
+  }
+   */
+  /*
+  .menus_compo_check i:hover {
+    @include zoum.transform_zoum;
+      animation: transform_zoum 0.5s ease-in-out;
+  }
+  */
+  /*
+  .menus_grid h3 {
+      padding: 0 10px;
+      margin: 10px;
+  }4rem
+  */
+}
+.menus_grid .menu_entree {
+  background-color: #f6f6f6;
+}
+.menus_grid .menu_entree h3 {
+  margin-top: 0;
+}
+.menus_grid .menu_entree .menus_compo {
+  display: flex;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 0 6px -3px;
+  border-radius: 14px;
+  width: auto;
+  overflow: hidden;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_items {
+  padding: 10px;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_items h4 {
+  margin: 5px 0;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_items p {
+  font-size: 12px;
+  margin: 0;
+}
+.menus_grid .menu_entree .menus_compo .menu_compo_prix {
+  margin-left: auto;
+  font-weight: 900;
+  font-size: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_check {
+  display: grid;
+  width: 45px;
+  height: auto;
+  margin-right: -45px;
+  transition: margin-right 0.5s;
+  border-radius: 0 14px 14px 0;
+  background-color: #99E2D0;
+  transition: margin-right 0.5s;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_check i {
+  display: grid;
+}
+.menus_grid .menu_entree .menus_compo .menus_compo_check i::before {
+  color: #99E2D0;
+  background-color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  margin: auto;
+  display: grid;
+  align-items: center;
+  place-items: center;
+}
+.menus_grid .menu_entree .menus_compo:hover .menus_compo_check {
+  margin-right: 0;
+}
+.menus_grid .menu_entree .menus_compo:hover .menus_compo_check i::before {
+  animation: animation_spin 0.5s ease-in-out;
+}
+@keyframes animation_spin {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

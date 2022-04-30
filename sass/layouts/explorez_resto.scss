@@ -1,4 +1,4 @@
-@use "../utils/zoum.scss";
+@use "../utils/mixins.scss";
 .explor_menu {
     text-align: center;
     background-color: #e6e6e6;
@@ -23,7 +23,7 @@
        transition: transform 200ms;
        box-shadow: 2px 1px 15px -3px;
        &:hover {
-           @include zoum.transform_zoum;
+           @include mixins.transform_zoum;
        }
     }
 }

@@ -1,4 +1,4 @@
-@use "../utils/zoum.scss";
+@use "../utils/mixins.scss";
 @use "../utils/colors.scss";
 .fonction {
     margin: 20px 0 20px 0;
@@ -11,7 +11,7 @@
         flex-wrap: wrap;
         gap: 30px;
         list-style-type: none;
-        padding: 0 15px;
+        padding: 0 20px;
         counter-reset: number; /* compteur */
         .fas {
             margin: 0 15px; 
@@ -45,7 +45,7 @@
             left: -12px; 
         }
         &:hover {
-            @include zoum.transform_zoum;
+            @include mixins.transform_zoum;
             background-color: #dbd7d7;
             i::before {
                 color: #b52fda;

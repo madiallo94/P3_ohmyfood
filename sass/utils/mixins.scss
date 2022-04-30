@@ -1,0 +1,15 @@
+@mixin animation_spin {
+    @keyframes animation_spin {   
+        0% {
+            transform: rotate(-270deg);
+            }
+        100% {
+            transform: rotate(0);
+        }
+    }
+}
+
+@mixin transform_zoum {
+    transform: scale(1.02);
+    opacity: 0.9;
+}

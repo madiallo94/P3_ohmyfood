@@ -1,74 +1,150 @@
+
+@use "../utils/mixins.scss";
+
+body{
+    background-color: #f6f6f6;
+}
 .logo_restautants img {
     height: 26px;
 }
-.imag_resto img {
-    width: 100%;
-    height: 35vh;
-    object-fit: cover;
-    object-position: center top;
+.imag_resto {
+    img {
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+        object-position: center top;
+    }
 }
 .titre_menu {
-    position: relative;
-    margin-top: -60px;
-    border-radius: 22px 22px 0 0;
-    background-color: #f6f6f6;
+    margin-top: -25px;
+    h2 {
+        font-family: "shrikhand", "cursive";
+        font-size: 18px;
+        padding: 18px;
+        margin: -4px 0 0 0;
+        background-color: #f6f6f6;
+        border-radius: 22px 22px 0 0;
+        position: relative;
+    }
 }
-.titre_menu h2{
-    font-family: "shrikhand", "cursive";
-    font-size: 18px;
-    padding: 18px;
-    margin-top: 0;
-}
+
 .menus_grid {
-}
-
-.menus_compo {
-    display: flex;
-    
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 0 6px -3px;
-}
-.menus_compo_items {
-    /* Pour mettre les petit points
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    */
-    padding: 10px;
-}
-.menus_compo_items p {
-    margin: 0;
-    font-size: 12px;
-}
-.menu_compo_prix {
-    margin-left: auto;
-    font-weight: 900;
-    display: flex;
-    align-items: flex-end;
-    padding: 10px;
-}
-.menus_compo_check {
     display: grid;
-    place-items: center;
-    width: 20px;
-    background-color: #99E2D0;
-    margin-right: -20px;
-    transition: margin-right 0.5s;
-}
-.menus_compo_check i {
-    display: grid;
-    place-items: center;
-    background-color: white;
-
-}
-.menus_compo_check i:hover {
-  /*  @include zoum.transform_zoum;*/
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+    gap: 10px;
+    width: 100%;
+    .menu_entree {
+        overflow: hidden;
+        background-color: #f6f6f6;
+        h3 {
+            margin-top: 0;
+            text-transform: uppercase;
+            font-weight: 400;
+            position: relative;
+            &::after {
+                content: "";
+                height: 2px;
+                width: 46px;
+                background-color: #99E2D0;
+                position: absolute;
+                top: 22px;
+                left: 0;
+            }
+        }
+        .menus_compo {
+            display: flex;
+            margin: 16px 2px;
+            box-shadow: 1px 1px 8px -3px;
+            border-radius: 14px;
+            width: auto;
+            overflow: hidden;
+            .menus_compo_items {
+                overflow: hidden;
+                padding: 10px;
+                background-color: white;
+                h4, p {
+                    margin: 2px 0;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+            .menu_compo_prix {
+                margin-left: auto;
+                font-weight: 900;
+                font-size: 12px;
+                display: flex;
+                align-items: flex-end;
+                padding: 10px;  
+            }
+            .menus_compo_check {
+                display: grid;
+                flex-shrink: 0;
+                width: 45px;
+                height: auto;
+                margin-right: -45px;
+                transition: margin-right 0.5s;
+                border-radius: 0 14px 14px 0;
+                background-color: #99E2D0;
+                transition: margin-right 0.5s;
+                i {
+                    display: grid;
+                    &::before {
+                        color: #99E2D0;
+                        background-color: white;
+                        border-radius: 50%;
+                        width: 22px;
+                        height: 22px;
+                        margin: auto;
+                        display: grid;
+                        align-items: center;
+                        place-items: center;
+                    }
+                }
+            }
+            &:hover {
+                .menus_compo_check {
+                    margin-right: 0;
+                    i::before {
+                        @include mixins.animation_spin;
+                        animation: animation_spin 0.5s ease-in-out;
+                    }
+                }
+                cursor: pointer;
+            }
+        }
+        
+    }
+    /* 
+    @include zoum.transform_zoum;
     animation: transform_zoum 0.5s ease-in-out;
+    .menus_compo_items {
+       Pour mettre les petit points
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 10px;
+       
+    }
+    .menus_compo_items p {
+        margin: 0;
+        font-size: 12px;
+    }
+     */
+     /*
+    .menus_compo_check i:hover {
+      @include zoum.transform_zoum;
+        animation: transform_zoum 0.5s ease-in-out;
+    }
+    */
+    /*
+    .menus_grid h3 {
+        padding: 0 10px;
+        margin: 10px;
+    }4rem
+    */
 }
-/*
-.menus_grid h3 {
-    padding: 0 10px;
-    margin: 10px;
-}4rem
-*/

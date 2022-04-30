@@ -5,10 +5,8 @@
 @use "./sass/layouts/fonctionnement.scss";
 @use "./sass/layouts/restaurant_menu.scss";
 @use "./sass/layouts/footer.scss";
-/*
 @use "./sass/pages/restaurant.scss";
-@use "./sass/pages/restaurant.scss";
-*/
+
 @media screen and (max-width: 768px) {
     .card {
         width: 100%;
