@@ -222,6 +222,8 @@ main .localisation {
   -webkit-background-clip: text;
   transition: all 200ms ease-in-out;
   font-weight: 400;
+  top: 20px;
+  right: 2rem;
 }
 .restaurantMenu .card .detailCard::after {
   display: inline-block;
@@ -242,6 +244,8 @@ main .localisation {
   color: transparent;
   opacity: 0;
   font-weight: 900;
+  top: 20px;
+  right: 2rem;
 }
 .restaurantMenu .card .detailCard:hover::after {
   opacity: 1;
@@ -544,4 +548,4 @@ div.commander button:hover {
   }
 }
 
-/*# sourceMappingURL=style.css.map */
+

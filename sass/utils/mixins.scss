@@ -45,6 +45,27 @@
     top: 50%;
     background-clip: text;
     -webkit-background-clip: text;
-  
     transition: all 200ms ease-in-out;
+}
+@mixin heart_animated {
+    &::before {
+        @include heart;
+        font-weight: 400;
+        top: 20px;
+        right: 2rem;
+    }
+    &::after {
+        @include heart;
+        color: transparent;
+        opacity: 0;
+        font-weight: 900;
+        top: 20px;
+        right: 2rem;
+    }
+    
+    &:hover::after {
+        opacity: 1;
+        background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+        @include transform_zoum;
+    }
 }

@@ -33,32 +33,22 @@
                 width: 100%;
                 margin: 10px 0;
         }
+       
         .card_image {
             object-fit: cover;
             width: 100%;
             height: 150px;
             border-radius: 14px 14px 0 0;
-        }   
+            @for $i from 1 through 4 {
+                card_image-#{$i} {
+                    background-image: url("../../publique/images/restaurant_#{$i}.jpg");
+                }
+            }   
+        }
         .detailCard {
             position: relative;
             height: auto;
-         
-            &::before {
-                @include mixins.heart;
-                font-weight: 400;
-            }
-            &::after {
-                @include mixins.heart;
-                color: transparent;
-                opacity: 0;
-                font-weight: 900;
-            }
-            
-            &:hover::after {
-                opacity: 1;
-                background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-                @include mixins.transform_zoum;
-            }
+            @include mixins.heart_animated;
             p { 
                 margin: 0 0 3px 5px;
                 color: black;

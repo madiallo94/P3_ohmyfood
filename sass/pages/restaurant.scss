@@ -35,26 +35,7 @@ body{
         background-color: #f6f6f6;
         border-radius: 22px 22px 0 0;
         position: relative;
-        &::before {
-            @include mixins.heart;
-            font-weight: 400;
-            top: 20px;
-            right: 2rem;
-        }
-        &::after {
-            @include mixins.heart;
-            color: transparent;
-            opacity: 0;
-            font-weight: 900;
-            top: 20px;
-            right: 2rem;
-        }
-        
-        &:hover::after {
-            opacity: 1;
-            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-            @include mixins.transform_zoum;
-        }
+        @include mixins.heart_animated;
     }
 }
 
