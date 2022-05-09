@@ -5,14 +5,19 @@
     padding: 20px 10px 50px 10px;
     margin-top: 20px;
     position: relative;
-
+    h4 {
+        margin: 5px 0 3px 5px;
+        color: black;
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
     .cardMenu {
         display: flex;
         justify-content: center;
-    }
-    @media screen and (max-width: 1100px) {
-        .cardMenu {
-            flex-wrap: wrap;
+        @media screen and (max-width: 1100px) {
+                flex-wrap: wrap;
         }
     }
     
@@ -24,19 +29,41 @@
         border-radius: 14px;
         margin: 20px;
         position: relative;  
-    }
-    .card_image {
-        object-fit: cover;
-        width: 100%;
-        height: 150px;
-        border-radius: 14px 14px 0 0;
-       
-    }   
-    
-    @media screen and (max-width: 768px) {
-        .card {
+        @media screen and (max-width: 768px) {
+                width: 100%;
+                margin: 10px 0;
+        }
+        .card_image {
+            object-fit: cover;
             width: 100%;
-            margin: 10px 0;
+            height: 150px;
+            border-radius: 14px 14px 0 0;
+        }   
+        .detailCard {
+            position: relative;
+            height: auto;
+         
+            &::before {
+                @include mixins.heart;
+                font-weight: 400;
+            }
+            &::after {
+                @include mixins.heart;
+                color: transparent;
+                opacity: 0;
+                font-weight: 900;
+            }
+            
+            &:hover::after {
+                opacity: 1;
+                background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+                @include mixins.transform_zoum;
+            }
+            p { 
+                margin: 0 0 3px 5px;
+                color: black;
+                font-size: 13px;
+            }
         }
     }
     .new::before {
@@ -50,53 +77,5 @@
         padding-top: 4px;
         right: 15px;
         top: 15px;
-    }
-    
-    .detailCard {
-        position: relative;
-        height: auto;
-        /*
-        &::before {
-            @include mixins.heart;
-        }
-        &::after {
-            @include mixins.heart;
-            color: transparent;
-            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-        }
-        */
-        p { 
-            margin: 0 0 3px 5px;
-            color: black;
-            font-size: 13px;
-        }
-        i {
-            position: absolute;
-            right: 18px;
-            top: 30%;
-            font-size: 20px;
-        }
-        .fas {
-            color: transparent;
-            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-            background-clip: text;
-            -webkit-background-clip: text;
-            transition: transform 200ms;
-            opacity: 0;
-        }
-        &:hover .fas {
-            transform: scale(1.08);
-            opacity: 1;
-            border: none;
-        }
-    }
-    
-    h4 {
-        margin: 5px 0 3px 5px;
-        color: black;
-        font-weight: bold;
-    }
-    a {
-        text-decoration: none;
     }
 }

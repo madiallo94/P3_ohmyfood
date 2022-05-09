@@ -163,6 +163,14 @@ main .localisation {
   margin-top: 20px;
   position: relative;
 }
+.restaurantMenu h4 {
+  margin: 5px 0 3px 5px;
+  color: black;
+  font-weight: bold;
+}
+.restaurantMenu a {
+  text-decoration: none;
+}
 .restaurantMenu .cardMenu {
   display: flex;
   justify-content: center;
@@ -181,17 +189,70 @@ main .localisation {
   margin: 20px;
   position: relative;
 }
-.restaurantMenu .card_image {
-  object-fit: cover;
-  width: 100%;
-  height: 150px;
-  border-radius: 14px 14px 0 0;
-}
 @media screen and (max-width: 768px) {
   .restaurantMenu .card {
     width: 100%;
     margin: 10px 0;
   }
+}
+.restaurantMenu .card .card_image {
+  object-fit: cover;
+  width: 100%;
+  height: 150px;
+  border-radius: 14px 14px 0 0;
+}
+.restaurantMenu .card .detailCard {
+  position: relative;
+  height: auto;
+}
+.restaurantMenu .card .detailCard::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  position: absolute;
+  cursor: pointer;
+  content: "\f004";
+  font-size: 1rem;
+  right: 1rem;
+  top: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in-out;
+  font-weight: 400;
+}
+.restaurantMenu .card .detailCard::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  position: absolute;
+  cursor: pointer;
+  content: "\f004";
+  font-size: 1rem;
+  right: 1rem;
+  top: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in-out;
+  color: transparent;
+  opacity: 0;
+  font-weight: 900;
+}
+.restaurantMenu .card .detailCard:hover::after {
+  opacity: 1;
+  background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+.restaurantMenu .card .detailCard p {
+  margin: 0 0 3px 5px;
+  color: black;
+  font-size: 13px;
 }
 .restaurantMenu .new::before {
   content: "Nouveau";
@@ -204,52 +265,6 @@ main .localisation {
   padding-top: 4px;
   right: 15px;
   top: 15px;
-}
-.restaurantMenu .detailCard {
-  position: relative;
-  height: auto;
-  /*
-  &::before {
-      @include mixins.heart;
-  }
-  &::after {
-      @include mixins.heart;
-      color: transparent;
-      background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  }
-  */
-}
-.restaurantMenu .detailCard p {
-  margin: 0 0 3px 5px;
-  color: black;
-  font-size: 13px;
-}
-.restaurantMenu .detailCard i {
-  position: absolute;
-  right: 18px;
-  top: 30%;
-  font-size: 20px;
-}
-.restaurantMenu .detailCard .fas {
-  color: transparent;
-  background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  background-clip: text;
-  -webkit-background-clip: text;
-  transition: transform 200ms;
-  opacity: 0;
-}
-.restaurantMenu .detailCard:hover .fas {
-  transform: scale(1.08);
-  opacity: 1;
-  border: none;
-}
-.restaurantMenu h4 {
-  margin: 5px 0 3px 5px;
-  color: black;
-  font-weight: bold;
-}
-.restaurantMenu a {
-  text-decoration: none;
 }
 
 footer {
@@ -327,6 +342,54 @@ body {
   background-color: #f6f6f6;
   border-radius: 22px 22px 0 0;
   position: relative;
+}
+.titre_menu h2::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  position: absolute;
+  cursor: pointer;
+  content: "\f004";
+  font-size: 1rem;
+  right: 1rem;
+  top: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in-out;
+  font-weight: 400;
+  top: 20px;
+  right: 2rem;
+}
+.titre_menu h2::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "font Awesome 5 Free";
+  position: absolute;
+  cursor: pointer;
+  content: "\f004";
+  font-size: 1rem;
+  right: 1rem;
+  top: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: all 200ms ease-in-out;
+  color: transparent;
+  opacity: 0;
+  font-weight: 900;
+  top: 20px;
+  right: 2rem;
+}
+.titre_menu h2:hover::after {
+  opacity: 1;
+  background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 .menus_grid {
@@ -462,34 +525,6 @@ div.commander button:hover {
   opacity: 0.9;
 }
 
-/* 
-@include zoum.transform_zoum;
-animation: transform_zoum 0.5s ease-in-out;
-.menus_compo_items {
-   Pour mettre les petit points
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 10px;
-
-}
-.menus_compo_items p {
-    margin: 0;
-    font-size: 12px;
-}
- */
-/*
-.menus_compo_check i:hover {
-  @include zoum.transform_zoum;
-    animation: transform_zoum 0.5s ease-in-out;
-}
-*/
-/*
-.menus_grid h3 {
-    padding: 0 10px;
-    margin: 10px;
-}4rem
-*/
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;

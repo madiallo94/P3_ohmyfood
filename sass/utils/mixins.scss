@@ -40,11 +40,11 @@
 @mixin heart {
     @include font_awesome_soeudo_element;
     content: "\f004";
-    font-size: 2rem;
+    font-size: 1rem;
     right: 1rem;
     top: 50%;
     background-clip: text;
     -webkit-background-clip: text;
-    opacity: 0.9;
+  
     transition: all 200ms ease-in-out;
 }

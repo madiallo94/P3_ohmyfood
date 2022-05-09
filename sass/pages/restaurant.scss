@@ -35,6 +35,26 @@ body{
         background-color: #f6f6f6;
         border-radius: 22px 22px 0 0;
         position: relative;
+        &::before {
+            @include mixins.heart;
+            font-weight: 400;
+            top: 20px;
+            right: 2rem;
+        }
+        &::after {
+            @include mixins.heart;
+            color: transparent;
+            opacity: 0;
+            font-weight: 900;
+            top: 20px;
+            right: 2rem;
+        }
+        
+        &:hover::after {
+            opacity: 1;
+            background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+            @include mixins.transform_zoum;
+        }
     }
 }
 
@@ -151,31 +171,4 @@ div.commander {
         }
     }    
 }
-    /* 
-    @include zoum.transform_zoum;
-    animation: transform_zoum 0.5s ease-in-out;
-    .menus_compo_items {
-       Pour mettre les petit points
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        padding: 10px;
-       
-    }
-    .menus_compo_items p {
-        margin: 0;
-        font-size: 12px;
-    }
-     */
-     /*
-    .menus_compo_check i:hover {
-      @include zoum.transform_zoum;
-        animation: transform_zoum 0.5s ease-in-out;
-    }
-    */
-    /*
-    .menus_grid h3 {
-        padding: 0 10px;
-        margin: 10px;
-    }4rem
-    */
+  
