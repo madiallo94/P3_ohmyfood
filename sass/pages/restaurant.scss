@@ -3,17 +3,19 @@
 body{
     background-color: #f6f6f6;
 }
-#resto_1 header, #resto_2 header, #resto_3 header, #resto_4 header {
+#page_restos {
     position: relative;
-    &::before {
+    header::before {
         content: "\f060";
         @include mixins.font_awesome_soeudo_element;
         font-weight: 900;
         left: 1rem;
+        text-align: center;
+        color: black;
     }
 }
-.logo_restautants img {
-    height: 26px;
+.logo_restautants {
+    margin: auto;
 }
 .imag_resto {
     img {
@@ -138,7 +140,7 @@ body{
         
     }
 }
-section.commander {
+div.commander {
     height: 10vh;
     display: grid;
     place-items: center;

@@ -286,10 +286,10 @@ body {
   background-color: #f6f6f6;
 }
 
-#resto_1 header, #resto_2 header, #resto_3 header, #resto_4 header {
+#page_restos {
   position: relative;
 }
-#resto_1 header::before, #resto_2 header::before, #resto_3 header::before, #resto_4 header::before {
+#page_restos header::before {
   content: "\f060";
   display: inline-block;
   font-style: normal;
@@ -301,10 +301,12 @@ body {
   cursor: pointer;
   font-weight: 900;
   left: 1rem;
+  text-align: center;
+  color: black;
 }
 
-.logo_restautants img {
-  height: 26px;
+.logo_restautants {
+  margin: auto;
 }
 
 .imag_resto img {
@@ -437,12 +439,12 @@ body {
   place-items: center;
 }
 
-section.commander {
+div.commander {
   height: 10vh;
   display: grid;
   place-items: center;
 }
-section.commander button {
+div.commander button {
   color: white;
   font-weight: 400;
   font-size: 15px;
@@ -455,7 +457,7 @@ section.commander button {
   box-shadow: 2px 1px 15px -3px;
   cursor: pointer;
 }
-section.commander button:hover {
+div.commander button:hover {
   transform: scale(1.02);
   opacity: 0.9;
 }
