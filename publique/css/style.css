@@ -135,7 +135,7 @@ main .localisation {
 .fonction li::before {
   counter-increment: number;
   content: counter(number);
-  color: color_white;
+  color: rgba(247, 241, 241, 0.9843137255);
   padding: 10px;
   position: absolute;
   border-radius: 50%;
@@ -198,21 +198,22 @@ main .localisation {
 }
 .restaurantMenu .card .card_image {
   background-size: cover;
+  background-position: center;
   width: 100%;
   height: 250px;
   border-radius: 14px 14px 0 0;
 }
 .restaurantMenu .card_image_1 {
-  background-image: url("./publique/images/restaurants/restaurant_1.jpg");
+  background-image: url("../../publique/images/restaurants/restaurant_1.jpg");
 }
 .restaurantMenu .card_image_2 {
-  background-image: url("./publique/images/restaurants/restaurant_2.jpg");
+  background-image: url("../../publique/images/restaurants/restaurant_2.jpg");
 }
 .restaurantMenu .card_image_3 {
-  background-image: url("./publique/images/restaurants/restaurant_3.jpg");
+  background-image: url("../../publique/images/restaurants/restaurant_3.jpg");
 }
 .restaurantMenu .card_image_4 {
-  background-image: url("./publique/images/restaurants/restaurant_4.jpg");
+  background-image: url("../../publique/images/restaurants/restaurant_4.jpg");
 }
 .restaurantMenu .card .detailCard {
   position: relative;
@@ -343,9 +344,14 @@ body {
 
 .imag_resto img {
   width: 100%;
-  height: 30vh;
+  height: 350px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
+}
+@media screen and (min-width: 500px) {
+  .imag_resto img {
+    height: 60vh;
+  }
 }
 
 .titre_menu {

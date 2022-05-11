@@ -33,7 +33,7 @@
         &::before {
             counter-increment: number;
             content: counter(number);
-            color: color_white;
+            color: colors.$color_white;
             padding: 10px;
             position: absolute;
             border-radius: 50%;
