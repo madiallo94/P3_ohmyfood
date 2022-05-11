@@ -1,7 +1,8 @@
 @use "../utils/mixins.scss";
 @use "../utils/animation.scss";
+@use "../utils/colors.scss";
 body{
-    background-color: #f6f6f6;
+    background-color: colors.$color_white;
 }
 #page_restos {
     position: relative;
@@ -11,7 +12,7 @@ body{
         font-weight: 900;
         left: 1rem;
         text-align: center;
-        color: black;
+        color: colors.$color_black;
     }
 }
 .logo_restautants {
@@ -32,7 +33,7 @@ body{
         font-size: 18px;
         padding: 18px;
         margin: -4px 0 0 0;
-        background-color: #f6f6f6;
+        background-color: colors.$color_white;
         border-radius: 22px 22px 0 0;
         position: relative;
         @include mixins.heart_animated;
@@ -47,7 +48,6 @@ body{
     width: 100%;
     .menus {
         overflow: hidden;
-        background-color: #f6f6f6;
         h3 {
             margin-top: 0;
             text-transform: uppercase;
@@ -57,7 +57,7 @@ body{
                 content: "";
                 height: 2px;
                 width: 46px;
-                background-color: #99E2D0;
+                background-color: colors.$color_tertiaire;
                 position: absolute;
                 top: 22px;
                 left: 0;
@@ -72,7 +72,7 @@ body{
             }
             .menus_compo {
                 display: flex;
-                background-color: white;
+                background-color: colors.$color_white;
                 margin: 16px 2px;
                 box-shadow: 1px 1px 8px -3px;
                 border-radius: 14px;
@@ -120,13 +120,13 @@ body{
                 margin-right: -45px;
                 transition: margin-right 0.5s;
                 border-radius: 0 14px 14px 0;
-                background-color: #99E2D0;
+                background-color: colors.$color_tertiaire;
                 transition: margin-right 0.5s;
                 i {
                     display: grid;
                     &::before {
-                        color: #99E2D0;
-                        background-color: white;
+                        color: colors.$color_tertiaire;
+                        background-color: colors.$color_white;
                         border-radius: 50%;
                         width: 22px;
                         height: 22px;

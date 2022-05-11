@@ -1,5 +1,6 @@
 @use "../utils/mixins.scss";
 @use "../utils/colors.scss";
+
 .fonction {
     margin: 20px 0 20px 0;
     h3 {
@@ -22,7 +23,7 @@
         display: flex;
         align-items: center;
         position: relative;
-        background-color: #f6f6f6;
+        background-color: colors.$color_white;
         padding: 8px 12px;
         font-size: small;
         height: 50px;
@@ -32,11 +33,11 @@
         &::before {
             counter-increment: number;
             content: counter(number);
-            color: white;
+            color: color_white;
             padding: 10px;
             position: absolute;
             border-radius: 50%;
-            background-color: #b52fda;
+            background-color: colors.$color_violet;
             width: 16px;
             height: 16px;
             display: flex;
@@ -46,9 +47,9 @@
         }
         &:hover {
             @include mixins.transform_zoum;
-            background-color: #dbd7d7;
+            background-color: colors.$light_grey;
             i::before {
-                color: #b52fda;
+                color: colors.$color_violet;
             }
         }
     }

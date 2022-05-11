@@ -34,7 +34,7 @@ main .localisation {
 
 .explor_menu {
   text-align: center;
-  background-color: #e6e6e6;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   padding-top: 1px;
 }
 .explor_menu h3 {
@@ -42,11 +42,11 @@ main .localisation {
 }
 .explor_menu p {
   font-size: 12px;
-  color: gray;
+  color: #7e7e7e;
   margin-top: 0;
 }
 .explor_menu button {
-  color: white;
+  color: rgba(247, 241, 241, 0.9843137255);
   font-weight: 400;
   font-size: 15px;
   padding: 10px 12px;
@@ -124,7 +124,7 @@ main .localisation {
   display: flex;
   align-items: center;
   position: relative;
-  background-color: #f6f6f6;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   padding: 8px 12px;
   font-size: small;
   height: 50px;
@@ -135,7 +135,7 @@ main .localisation {
 .fonction li::before {
   counter-increment: number;
   content: counter(number);
-  color: white;
+  color: color_white;
   padding: 10px;
   position: absolute;
   border-radius: 50%;
@@ -150,14 +150,14 @@ main .localisation {
 .fonction li:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  background-color: #dbd7d7;
+  background-color: #dfdfdf;
 }
 .fonction li:hover i::before {
   color: #b52fda;
 }
 
 .restaurantMenu {
-  background-color: #e6e6e6;
+  background-color: #dfdfdf;
   height: auto;
   padding: 20px 10px 50px 10px;
   margin-top: 20px;
@@ -165,7 +165,7 @@ main .localisation {
 }
 .restaurantMenu h4 {
   margin: 5px 0 3px 5px;
-  color: black;
+  color: rgba(34, 30, 30, 0.87);
   font-weight: bold;
 }
 .restaurantMenu a {
@@ -182,8 +182,8 @@ main .localisation {
 }
 .restaurantMenu .card {
   width: 44%;
-  height: 210px;
-  background-color: white;
+  height: 300px;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   padding: 0.7%;
   border-radius: 14px;
   margin: 20px;
@@ -193,13 +193,26 @@ main .localisation {
   .restaurantMenu .card {
     width: 100%;
     margin: 10px 0;
+    height: 300px;
   }
 }
 .restaurantMenu .card .card_image {
-  object-fit: cover;
+  background-size: cover;
   width: 100%;
-  height: 150px;
+  height: 250px;
   border-radius: 14px 14px 0 0;
+}
+.restaurantMenu .card_image_1 {
+  background-image: url("./publique/images/restaurants/restaurant_1.jpg");
+}
+.restaurantMenu .card_image_2 {
+  background-image: url("./publique/images/restaurants/restaurant_2.jpg");
+}
+.restaurantMenu .card_image_3 {
+  background-image: url("./publique/images/restaurants/restaurant_3.jpg");
+}
+.restaurantMenu .card_image_4 {
+  background-image: url("./publique/images/restaurants/restaurant_4.jpg");
 }
 .restaurantMenu .card .detailCard {
   position: relative;
@@ -255,7 +268,7 @@ main .localisation {
 }
 .restaurantMenu .card .detailCard p {
   margin: 0 0 3px 5px;
-  color: black;
+  color: rgba(34, 30, 30, 0.87);
   font-size: 13px;
 }
 .restaurantMenu .new::before {
@@ -273,11 +286,11 @@ main .localisation {
 
 footer {
   background-color: rgba(34, 30, 30, 0.87);
-  color: white;
+  color: rgba(247, 241, 241, 0.9843137255);
   padding: 10px 20px;
 }
 footer a {
-  color: white;
+  color: rgba(247, 241, 241, 0.9843137255);
   text-decoration: none;
 }
 footer p {
@@ -302,7 +315,7 @@ footer i {
   }
 }
 body {
-  background-color: #f6f6f6;
+  background-color: rgba(247, 241, 241, 0.9843137255);
 }
 
 #page_restos {
@@ -321,7 +334,7 @@ body {
   font-weight: 900;
   left: 1rem;
   text-align: center;
-  color: black;
+  color: rgba(34, 30, 30, 0.87);
 }
 
 .logo_restautants {
@@ -343,7 +356,7 @@ body {
   font-size: 18px;
   padding: 18px;
   margin: -4px 0 0 0;
-  background-color: #f6f6f6;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   border-radius: 22px 22px 0 0;
   position: relative;
 }
@@ -405,7 +418,6 @@ body {
 }
 .menus_grid .menus {
   overflow: hidden;
-  background-color: #f6f6f6;
 }
 .menus_grid .menus h3 {
   margin-top: 0;
@@ -433,7 +445,7 @@ body {
 }
 .menus_grid .menus .menus_items_list .menus_compo {
   display: flex;
-  background-color: white;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   margin: 16px 2px;
   box-shadow: 1px 1px 8px -3px;
   border-radius: 14px;
@@ -496,7 +508,7 @@ body {
 }
 .menus_grid .menus .menus_items_list .menus_compo_check i::before {
   color: #99E2D0;
-  background-color: white;
+  background-color: rgba(247, 241, 241, 0.9843137255);
   border-radius: 50%;
   width: 22px;
   height: 22px;
@@ -512,7 +524,7 @@ div.commander {
   place-items: center;
 }
 div.commander button {
-  color: white;
+  color: rgba(247, 241, 241, 0.9843137255);
   font-weight: 400;
   font-size: 15px;
   padding: 10px 12px;
@@ -533,6 +545,7 @@ div.commander button:hover {
   .card {
     width: 100%;
     margin: 0 0 15px 0;
+    height: 250px;
   }
 
   .fonction ol {
@@ -548,4 +561,4 @@ div.commander button:hover {
   }
 }
 
-
+/*# sourceMappingURL=style.css.map */

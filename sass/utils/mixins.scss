@@ -1,3 +1,5 @@
+
+@use "./colors.scss";
 @mixin animation_spin {
     @keyframes animation_spin {   
         0% {
@@ -15,12 +17,12 @@
 }
 
 @mixin button_commander {
-    color: white;
+    color: colors.$color_white;
     font-weight: 400;
     font-size: 15px;
     padding: 10px 12px;
     margin: 10px 0 30px 0;
-    background-image: linear-gradient(to top, #9356DC, #FF79DA);
+    background-image: linear-gradient(to top, colors.$color_primaire, colors.$color_secondaire);
     border-radius: 18px;
     border: none;
     transition: transform 200ms;

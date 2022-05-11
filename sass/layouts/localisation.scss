@@ -1,8 +1,9 @@
+@use "../utils/colors.scss";
 main .localisation {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #dfdfdf;
+    background-color: colors.$light_grey;
     height: 50px;
     gap: 10px;
 }
