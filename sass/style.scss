@@ -1,11 +1,11 @@
-@use "./sass/base.scss";
-@use "./sass/layouts/header";
-@use "./sass/layouts/localisation.scss";
-@use "./sass/layouts/explorez_resto";
-@use "./sass/layouts/fonctionnement.scss";
-@use "./sass/layouts/restaurant_menu.scss";
-@use "./sass/layouts/footer.scss";
-@use "./sass/pages/restaurant.scss";
+@use "./base.scss";
+@use "./layouts/header";
+@use "./layouts/localisation.scss";
+@use "./layouts/explorez_resto";
+@use "./layouts/fonctionnement.scss";
+@use "./layouts/restaurant_menu.scss";
+@use "./layouts/footer.scss";
+@use "./pages/restaurant.scss";
 
 @media screen and (max-width: 768px) {
     .card {
