@@ -1,0 +1,20 @@
+@use "../utils/colors.scss";
+footer {
+    background-color: colors.$color_black;
+    color: colors.$color_white;
+    padding: 10px 20px;
+    a {
+        color: colors.$color_white;
+        text-decoration: none;
+    }
+    p {
+        margin: 8px 0;
+    }
+    h3 {
+        font-family: Shrikhand;
+        font-weight: bold;
+    }
+    i {
+        padding: 5px;
+    }
+}

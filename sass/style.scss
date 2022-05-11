@@ -1,0 +1,25 @@
+@use "./base.scss";
+@use "./layouts/header";
+@use "./layouts/localisation.scss";
+@use "./layouts/explorez_resto";
+@use "./layouts/fonctionnement.scss";
+@use "./layouts/restaurant_menu.scss";
+@use "./layouts/footer.scss";
+@use "./pages/restaurant.scss";
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 100%;
+        margin: 0 0 15px 0;
+        height: 250px;
+    }
+    .fonction ol {
+        flex-direction: column;
+    }
+    .fonction li {
+        width: 96%;
+    }
+    .menus_grid {
+        grid-template-columns: 1fr;
+    }    
+}

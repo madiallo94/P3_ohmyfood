@@ -1,0 +1,76 @@
+@use "../utils/mixins.scss";
+@use "../utils/colors.scss";
+.restaurantMenu {
+    background-color: colors.$light_grey;
+    height: auto;
+    padding: 20px 10px 50px 10px;
+    margin-top: 20px;
+    position: relative;
+    h4 {
+        margin: 5px 0 3px 5px;
+        color: colors.$color_black;
+        font-weight: bold;
+    }
+    a {
+        text-decoration: none;
+    }
+    .cardMenu {
+        display: flex;
+        justify-content: center;
+        @media screen and (max-width: 1100px) {
+                flex-wrap: wrap;
+        }
+    }
+    
+    .card {
+        width: 44%;
+        height: 300px;
+        background-color: colors.$color_white;
+        padding: 0.7%;
+        border-radius: 14px;
+        margin: 20px;
+        position: relative;  
+        @media screen and (max-width: 768px) {
+                width: 100%;
+                margin: 10px 0;
+                height: 300px;
+        }
+        .card_image {
+            background-size: cover; 
+            background-position: center;
+            width: 100%;
+            height: 250px;
+            border-radius: 14px 14px 0 0;
+            
+        }
+        $nombre_image: 4;
+        @for $i from 1 through $nombre_image {
+            &_image_#{$i} {
+                background-image: url("../../publique/images/restaurants/restaurant_#{$i}.jpg");
+            }
+        } 
+        .detailCard {
+            position: relative;
+            height: auto;
+            @include mixins.heart_animated;
+            p { 
+                margin: 0 0 3px 5px;
+                color: colors.$color_black;
+                font-size: 13px;
+            }
+        }
+    }
+    .new::before {
+        content: "Nouveau";
+        position: absolute;
+        height: 25px;
+        width: 80px;
+        background-color: colors.$color_tertiaire;
+        text-align: center;
+        color: colors.$light_green;
+        padding-top: 4px;
+        right: 15px;
+        top: 15px;
+    }
+    
+}
