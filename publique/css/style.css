@@ -116,6 +116,11 @@ main .localisation {
   counter-reset: number;
   /* compteur */
 }
+@media screen and (max-width: 768px) {
+  .fonction ol {
+    flex-direction: column;
+  }
+}
 .fonction ol .fas {
   margin: 0 15px;
   color: #7e7e7e;
@@ -131,6 +136,11 @@ main .localisation {
   width: 31%;
   border-radius: 15px;
   box-shadow: 0 0 6px -3px;
+}
+@media screen and (max-width: 768px) {
+  .fonction li {
+    width: 96%;
+  }
 }
 .fonction li::before {
   counter-increment: number;
@@ -182,7 +192,7 @@ main .localisation {
 }
 .restaurantMenu .card {
   width: 44%;
-  height: 300px;
+  height: 320px;
   background-color: rgba(247, 241, 241, 0.9843137255);
   padding: 0.7%;
   border-radius: 14px;
@@ -261,16 +271,18 @@ main .localisation {
   top: 20px;
   right: 2rem;
 }
-.restaurantMenu .card .detailCard:hover::after {
-  opacity: 1;
-  background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  transform: scale(1.02);
-  opacity: 0.9;
-}
 .restaurantMenu .card .detailCard p {
   margin: 0 0 3px 5px;
   color: rgba(34, 30, 30, 0.87);
   font-size: 13px;
+}
+.restaurantMenu .card:hover .detailCard::after {
+  opacity: 1;
+  background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+  transition: all 2s;
+}
+.restaurantMenu .card:hover .detailCard::after::before {
+  display: none;
 }
 .restaurantMenu .new::before {
   content: "Nouveau";
@@ -344,13 +356,13 @@ body {
 
 .imag_resto img {
   width: 100%;
-  height: 350px;
+  height: 380px;
   object-fit: cover;
   object-position: center;
 }
 @media screen and (min-width: 500px) {
   .imag_resto img {
-    height: 60vh;
+    height: 780px;
   }
 }
 
@@ -411,8 +423,10 @@ body {
 .titre_menu h2:hover::after {
   opacity: 1;
   background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  transform: scale(1.02);
-  opacity: 0.9;
+  transition: all 2s;
+}
+.titre_menu h2:hover::after::before {
+  display: none;
 }
 
 .menus_grid {
@@ -421,6 +435,11 @@ body {
   padding: 10px;
   gap: 10px;
   width: 100%;
+}
+@media screen and (max-width: 980px) {
+  .menus_grid {
+    display: flow-root;
+  }
 }
 .menus_grid .menus {
   overflow: hidden;
@@ -545,26 +564,6 @@ div.commander button {
 div.commander button:hover {
   transform: scale(1.02);
   opacity: 0.9;
-}
-
-@media screen and (max-width: 768px) {
-  .card {
-    width: 100%;
-    margin: 0 0 15px 0;
-    height: 250px;
-  }
-
-  .fonction ol {
-    flex-direction: column;
-  }
-
-  .fonction li {
-    width: 96%;
-  }
-
-  .menus_grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
