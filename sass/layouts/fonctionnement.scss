@@ -14,6 +14,9 @@
         list-style-type: none;
         padding: 0 20px;
         counter-reset: number; /* compteur */
+        @media screen and (max-width: 768px) {
+                flex-direction: column;
+        }
         .fas {
             margin: 0 15px; 
             color: colors.$color_grey;
@@ -30,6 +33,9 @@
         width: 31%;
         border-radius: 15px;
         box-shadow: 0 0 6px -3px; 
+        @media screen and (max-width: 768px) {
+            width: 96%;
+        }
         &::before {
             counter-increment: number;
             content: counter(number);

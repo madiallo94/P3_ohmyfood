@@ -63,11 +63,14 @@
         font-weight: 900;
         top: 20px;
         right: 2rem;
-    }
-    
-    &:hover::after {
-        opacity: 1;
-        background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-        @include transform_zoum;
+       
+    } 
+}
+@mixin heart_full_animated {
+    opacity: 1;
+    background-image: linear-gradient(to top, #8d55d1, #FF79DA);
+    transition: all 2s;
+    &::before {
+        display: none;
     }
 }
