@@ -3,38 +3,41 @@
 
 .fonction {
     margin: 20px 0 20px 0;
+    background-color: colors.$color_white;
     h3 {
         padding-left: 15px;
     }
     ol {
         display: flex;
-        align-items: center;
-        flex-wrap: wrap;
+        align-items: centent;
         gap: 30px;
         list-style-type: none;
-        padding: 0 20px;
+        padding-left: 20px;
         counter-reset: number; /* compteur */
         @media screen and (max-width: 768px) {
                 flex-direction: column;
         }
         .fas {
             margin: 0 15px; 
-            color: colors.$color_grey;
+            color: rgba(15, 13, 13, 0.75);
+          /*color: colors.$color_grey;*/
         }
     }
     li {
         display: flex;
         align-items: center;
         position: relative;
-        background-color: colors.$color_white;
-        padding: 8px 12px;
-        font-size: small;
+        padding: 8px  0 8px 12px;
+        font-weight: 400;
         height: 50px;
         width: 31%;
         border-radius: 15px;
-        box-shadow: 0 0 6px -3px; 
+        box-shadow: 0 1px 4px -3px; 
+        @media screen and (max-width: 1024px) {
+            margin-right: 10px;
+        }
         @media screen and (max-width: 768px) {
-            width: 96%;
+            width: 98%;
         }
         &::before {
             counter-increment: number;
@@ -43,7 +46,7 @@
             padding: 10px;
             position: absolute;
             border-radius: 50%;
-            background-color: colors.$color_violet;
+            background-color: colors.$color_primaire;
             width: 16px;
             height: 16px;
             display: flex;
@@ -53,9 +56,9 @@
         }
         &:hover {
             @include mixins.transform_zoum;
-            background-color: colors.$light_grey;
+            background-color: rgba(238, 223, 231, 0.67);
             i::before {
-                color: colors.$color_violet;
+                color: colors.$color_primaire;
             }
         }
     }

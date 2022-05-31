@@ -12,7 +12,8 @@ header {
   display: flex;
   align-items: center;
   position: relative;
-  box-shadow: 0 0 4px -4px;
+  background-color: rgba(247, 241, 241, 0.9843137255);
+  box-shadow: 0 0 12px -6px;
   margin: 0;
   padding: 8px;
 }
@@ -23,27 +24,32 @@ header img {
   height: 30px;
 }
 
-main .localisation {
+.localisation {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #dfdfdf;
+  background-color: rgba(231, 227, 234, 0.7490196078);
   height: 50px;
   gap: 10px;
 }
 
 .explor_menu {
   text-align: center;
-  background-color: rgba(247, 241, 241, 0.9843137255);
+  background-color: rgba(57, 56, 56, 0.03);
   padding-top: 1px;
 }
 .explor_menu h3 {
   margin-bottom: 5px;
+  width: 200px;
+  margin: auto;
+  padding: 10px 0;
 }
 .explor_menu p {
   font-size: 12px;
-  color: #7e7e7e;
-  margin-top: 0;
+  color: rgba(34, 30, 30, 0.87);
+  margin: auto;
+  width: 210px;
+  padding-bottom: 10px;
 }
 .explor_menu button {
   color: rgba(247, 241, 241, 0.9843137255);
@@ -95,24 +101,19 @@ main .localisation {
     transform: scale(0);
   }
 }
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
 .fonction {
   margin: 20px 0 20px 0;
+  background-color: rgba(247, 241, 241, 0.9843137255);
 }
 .fonction h3 {
   padding-left: 15px;
 }
 .fonction ol {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  align-items: centent;
   gap: 30px;
   list-style-type: none;
-  padding: 0 20px;
+  padding-left: 20px;
   counter-reset: number;
   /* compteur */
 }
@@ -123,23 +124,28 @@ main .localisation {
 }
 .fonction ol .fas {
   margin: 0 15px;
-  color: #7e7e7e;
+  color: rgba(15, 13, 13, 0.75);
+  /*color: colors.$color_grey;*/
 }
 .fonction li {
   display: flex;
   align-items: center;
   position: relative;
-  background-color: rgba(247, 241, 241, 0.9843137255);
-  padding: 8px 12px;
-  font-size: small;
+  padding: 8px 0 8px 12px;
+  font-weight: 400;
   height: 50px;
   width: 31%;
   border-radius: 15px;
-  box-shadow: 0 0 6px -3px;
+  box-shadow: 0 1px 4px -3px;
+}
+@media screen and (max-width: 1024px) {
+  .fonction li {
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 768px) {
   .fonction li {
-    width: 96%;
+    width: 98%;
   }
 }
 .fonction li::before {
@@ -149,7 +155,7 @@ main .localisation {
   padding: 10px;
   position: absolute;
   border-radius: 50%;
-  background-color: #b52fda;
+  background-color: #9356DC;
   width: 16px;
   height: 16px;
   display: flex;
@@ -160,14 +166,14 @@ main .localisation {
 .fonction li:hover {
   transform: scale(1.02);
   opacity: 0.9;
-  background-color: #dfdfdf;
+  background-color: rgba(238, 223, 231, 0.67);
 }
 .fonction li:hover i::before {
-  color: #b52fda;
+  color: #9356DC;
 }
 
 .restaurantMenu {
-  background-color: #dfdfdf;
+  background-color: rgba(231, 227, 234, 0.7490196078);
   height: auto;
   padding: 20px 10px 50px 10px;
   margin-top: 20px;
@@ -194,23 +200,22 @@ main .localisation {
   width: 44%;
   height: 320px;
   background-color: rgba(247, 241, 241, 0.9843137255);
-  padding: 0.7%;
   border-radius: 14px;
   margin: 20px;
   position: relative;
+  box-shadow: 0 1px 4px -3px;
 }
 @media screen and (max-width: 768px) {
   .restaurantMenu .card {
     width: 100%;
     margin: 10px 0;
-    height: 300px;
   }
 }
 .restaurantMenu .card .card_image {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 250px;
+  height: 240px;
   border-radius: 14px 14px 0 0;
 }
 .restaurantMenu .card_image_1 {
@@ -239,15 +244,17 @@ main .localisation {
   position: absolute;
   cursor: pointer;
   content: "\f004";
-  font-size: 1rem;
+  font-size: 1.5rem;
   right: 1rem;
-  top: 50%;
+  top: -1px;
   background-clip: text;
   -webkit-background-clip: text;
   transition: all 200ms ease-in-out;
   font-weight: 400;
-  top: 20px;
+  top: -1px;
   right: 2rem;
+  border: -0.5px;
+  color: black;
 }
 .restaurantMenu .card .detailCard::after {
   display: inline-block;
@@ -259,27 +266,30 @@ main .localisation {
   position: absolute;
   cursor: pointer;
   content: "\f004";
-  font-size: 1rem;
+  font-size: 1.5rem;
   right: 1rem;
-  top: 50%;
+  top: -1px;
   background-clip: text;
   -webkit-background-clip: text;
   transition: all 200ms ease-in-out;
   color: transparent;
   opacity: 0;
   font-weight: 900;
-  top: 20px;
+  top: -1px;
   right: 2rem;
 }
+.restaurantMenu .card .detailCard h4 {
+  margin-top: 14px;
+}
 .restaurantMenu .card .detailCard p {
-  margin: 0 0 3px 5px;
+  margin: 5px 0 10px 5px;
   color: rgba(34, 30, 30, 0.87);
-  font-size: 13px;
+  font-size: 15px;
 }
 .restaurantMenu .card:hover .detailCard::after {
   opacity: 1;
   background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  transition: all 2s;
+  transition: all 1.5s;
 }
 .restaurantMenu .card:hover .detailCard::after::before {
   display: none;
@@ -334,19 +344,10 @@ body {
 #page_restos {
   position: relative;
 }
-#page_restos header::before {
-  content: "\f060";
-  display: inline-block;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font-family: "font Awesome 5 Free";
+#page_restos header a {
   position: absolute;
-  cursor: pointer;
-  font-weight: 900;
   left: 1rem;
-  text-align: center;
+  top: 17px;
   color: rgba(34, 30, 30, 0.87);
 }
 
@@ -388,15 +389,17 @@ body {
   position: absolute;
   cursor: pointer;
   content: "\f004";
-  font-size: 1rem;
+  font-size: 1.5rem;
   right: 1rem;
-  top: 50%;
+  top: -1px;
   background-clip: text;
   -webkit-background-clip: text;
   transition: all 200ms ease-in-out;
   font-weight: 400;
-  top: 20px;
+  top: -1px;
   right: 2rem;
+  border: -0.5px;
+  color: black;
 }
 .titre_menu h2::after {
   display: inline-block;
@@ -408,22 +411,26 @@ body {
   position: absolute;
   cursor: pointer;
   content: "\f004";
-  font-size: 1rem;
+  font-size: 1.5rem;
   right: 1rem;
-  top: 50%;
+  top: -1px;
   background-clip: text;
   -webkit-background-clip: text;
   transition: all 200ms ease-in-out;
   color: transparent;
   opacity: 0;
   font-weight: 900;
-  top: 20px;
+  top: -1px;
   right: 2rem;
+}
+.titre_menu h2::before, .titre_menu h2::after {
+  top: 15px;
+  border: none;
 }
 .titre_menu h2:hover::after {
   opacity: 1;
   background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-  transition: all 2s;
+  transition: all 1.5s;
 }
 .titre_menu h2:hover::after::before {
   display: none;
@@ -472,7 +479,7 @@ body {
   display: flex;
   background-color: rgba(247, 241, 241, 0.9843137255);
   margin: 16px 2px;
-  box-shadow: 1px 1px 8px -3px;
+  box-shadow: 1px 1px 4px -3px;
   border-radius: 14px;
   width: auto;
   overflow: hidden;

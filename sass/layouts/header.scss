@@ -1,8 +1,10 @@
+@use "../utils/colors.scss";
 header {
     display: flex;
     align-items: center;
     position: relative;
-    box-shadow: 0 0 4px -4px;
+    background-color: colors.$color_white;
+    box-shadow: 0 0 12px -6px;
     margin: 0;
     padding: 8px;
     a {
