@@ -42,9 +42,9 @@
 @mixin heart {
     @include font_awesome_soeudo_element;
     content: "\f004";
-    font-size: 1rem;
+    font-size: 1.5rem;
     right: 1rem;
-    top: 50%;
+    top: -1px;
     background-clip: text;
     -webkit-background-clip: text;
     transition: all 200ms ease-in-out;
@@ -53,15 +53,17 @@
     &::before {
         @include heart;
         font-weight: 400;
-        top: 20px;
+        top: -1px;
         right: 2rem;
+        border: -0.5px;
+        color: black;
     }
     &::after {
         @include heart;
         color: transparent;
         opacity: 0;
         font-weight: 900;
-        top: 20px;
+        top: -1px;
         right: 2rem;
        
     } 
@@ -69,7 +71,7 @@
 @mixin heart_full_animated {
     opacity: 1;
     background-image: linear-gradient(to top, #8d55d1, #FF79DA);
-    transition: all 2s;
+    transition: all 1.5s;
     &::before {
         display: none;
     }
